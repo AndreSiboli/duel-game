@@ -1,0 +1,52 @@
+@use "@/styles/_dirs/variables" as var;
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  max-width: 400px;
+  width: 100%;
+  border: 2px solid var.$neutral_color_500;
+  border-radius: 1em;
+  padding: 0.75em 1em;
+
+  &_types {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-weight: bold;
+      line-height: 1em;
+    }
+  }
+
+  &_score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    background: var.$lightest_color;
+    padding: 0.75em;
+    border-radius: 0.5em;
+    color: #000;
+    max-width: 100px;
+    width: 100%;
+
+    .score_title {
+      font-size: 0.8em;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      color: var.$brand_color;
+      line-height: 1em;
+    }
+
+    .score_number {
+      color: var.$neutral_color_600;
+      font-size: 2.5em;
+      font-weight: bold;
+      line-height: 1em;
+    }
+  }
+}

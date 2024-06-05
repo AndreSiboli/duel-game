@@ -1,0 +1,66 @@
+@use "@/styles/_dirs/variables" as var;
+
+.token {
+  border-radius: 50%;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  height: 100%;
+
+  &.scissors {
+    border-bottom-color: #c66e15;
+
+    .token_wrapper {
+      border-color: #eca319;
+    }
+  }
+
+  &.spock {
+    border-bottom-color: #368aa6;
+
+    .token_wrapper {
+      border-color: #46b9ce;
+    }
+  }
+
+  &.paper {
+    border-bottom-color: #304598;
+
+    .token_wrapper {
+      border-color: #5572f4;
+    }
+  }
+
+  &.lizard {
+    border-bottom-color: #4b3a81;
+
+    .token_wrapper {
+      border-color: #8f5de4;
+    }
+  }
+
+  &.rock {
+    border-bottom-color: #911c39;
+
+    .token_wrapper {
+      border-color: #df405e;
+    }
+  }
+
+  &_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1em solid #000;
+    border-radius: 50%;
+    box-shadow: inset 0 5px 5px #0005;
+    background: var.$lightest_color;
+  }
+
+  &_image {
+    position: relative;
+    width: calc(100% / 2);
+    height: calc(100% / 2);
+  }
+}

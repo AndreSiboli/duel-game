@@ -1,0 +1,12 @@
+@use "@/styles/_dirs/variables" as var;
+
+.button {
+  background: var.$lightest_color;
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em 1.5em;
+  font-weight: bold;
+  color: #14163a;
+  cursor: pointer;
+  width: 100%;
+}

@@ -1,0 +1,129 @@
+@use "@/styles/_dirs/variables" as var;
+
+.duel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  padding: 0 1em;
+
+  @media (max-width: 600px) {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  &_player,
+  &_cpu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    .duel_token {
+      width: 168px;
+      height: 168px;
+    }
+
+    @media (max-width: 600px) {
+      max-width: 168px;
+      width: 100%;
+
+      .duel_token {
+        max-width: 168px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    > p {
+      font-size: calc(1em + 0.2vw);
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  &_cpu {
+    margin-left: 2em;
+
+    &_wait {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 168px;
+      height: 168px;
+
+      .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        background: #0007;
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+
+        span {
+          background: var.$lightest_color;
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+          opacity: 0;
+          transform: scale(0);
+          animation: 0.5s ease-in-out infinite alternate-reverse loading;
+
+          &:first-child {
+            animation-delay: 0.16s;
+          }
+          &:nth-child(2) {
+            animation-delay: 0.32s;
+          }
+          &:last-child {
+            animation-delay: 0.48s;
+          }
+
+          @keyframes loading {
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        }
+      }
+
+      @media (max-width: 600px) {
+        max-width: 168px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+
+        .circle {
+          width: calc(100% - 32px);
+          height: auto;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
+  }
+
+  &_player {
+    margin-right: 2em;
+  }
+
+  &_message {
+    &_mobile {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      &_mobile {
+        display: block;
+      }
+
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+}
