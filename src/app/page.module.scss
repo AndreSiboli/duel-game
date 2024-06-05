@@ -8,5 +8,10 @@
   gap: 3em;
   padding: 1em;
   padding-top: 2em;
-  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+
+  @media (min-width: 1500px) {
+    min-height: 600px;
+  }
 }
